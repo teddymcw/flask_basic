@@ -1,0 +1,16 @@
+{% extends "root.html" %}
+      
+
+      {% block content %}
+      <h1> Tic Tac Toe!</h1>
+
+      <div id="top"> {{ board_1 }} </div>
+      <div id="middle"> {{ board_2 }} </div>
+      <div id="bottom"> {{ board_3 }} </div>
+      <!--<div> {{ board }}-->
+      <form action="" method="POST">
+        <p>{{ form.x_or_o.label }} {{ form.x_or_o }} </p>
+        <p><input class="large round button" type="submit" value="Submit"></p>
+      </form>
+      {% endblock %}
+      
