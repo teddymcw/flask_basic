@@ -1,1 +1,1 @@
-Most basic flask starter kit possible for cloning purposes
+Most basic flask starter kit possible for purposes and beginning new projects!
