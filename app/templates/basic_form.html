@@ -1,0 +1,15 @@
+{% extends "root.html" %}
+      
+
+      {% block content %}
+      <h1> for testing basic forms </h1>
+      
+      <form action="" method="POST">
+
+      <p> most basic form possible </br> 
+      {{ form.basic_form.label }} {{ form.basic_form }} </p>
+      <p><input type="submit" value="Submit"></p>
+
+      </form>
+
+      {% endblock %}

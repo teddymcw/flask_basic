@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash
 from flask.ext.sqlalchemy import SQLAlchemy
-from forms import InputForm
+from forms import BasicForm, InputForm
 
 #for config
 import os
@@ -28,16 +28,30 @@ def hello():
 def print_board():   
     return board[:3], board[3:6], board[6:9]
 
+@app.route("/basic_form", methods=["GET", "POST"])
+def basic_form():
+    form = BasicForm()
+    if form.validate_on_submit():
+        flash("you are validated")
+        print 'valid test'
+    else:
+        flash("ehhh...ehh!, form didn't go")
+        print 'invalid test'
+    return render_template("basic_form.html", form=form)
+
 #test application code for db, forms and such
 board = [str(num) for num in range(10)]
 @app.route("/play", methods=["GET", "POST"])
 def show_board():
     new_board = print_board()
     form=InputForm()
+    print "test"
     if form.validate_on_submit():
         flash("you are validated")
+        print 'valid test'
     else:
         flash("ehhh...ehh!, form didn't go")
+        print 'invalid test'
     return render_template("test.html", form=form, board_1=new_board[0], \
                                                     board_2=new_board[1], \
                                                     board_3=new_board[2])

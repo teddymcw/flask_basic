@@ -9,7 +9,7 @@
       <div id="bottom"> {{ board_3 }} </div>
       <!--<div> {{ board }}-->
       <form action="" method="POST">
-        <p>{{ form.x_or_o.label }} {{ form.x_or_o }} </p>
+        <p>{{ form.x_or_o.label }} {{ form.x_or_o }} {{ form.submit() }}</p>
         <p><input class="large round button" type="submit" value="Submit"></p>
       </form>
       {% endblock %}
